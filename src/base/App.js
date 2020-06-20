@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dots from '../dots/Dots'
 import Sketch from '../sketch/Sketch'
 import Material from '../materialui/Material'
+import TicTacToe from '../tictactoe/index'
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/dots" component={Dots} />
 				<Route path="/sketch" component={Sketch} />
 				<Route path="/material" component={Material} />
+				<Route path="/tictactoe" component={TicTacToe} />
 				<Route component={Error} />
 			</Switch>
 		</Router>
