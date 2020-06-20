@@ -1,0 +1,43 @@
+#sketch {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+}
+
+#grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, [col] 1fr);
+	grid-template-rows: repeat(auto-fit, [row] 1fr);
+	width: 500px;
+	height: 500px;
+	border: 1px solid #ff66cc;
+	
+	.square {
+		border: 1px solid #ff66cc;
+	}
+}
+
+#options {
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-right: 50px;
+	
+	.option {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		&> * {
+			flex: 1 0 auto;
+		}
+	}
+	// button {
+	// 	flex: 0 0 auto;
+	// 	padding: 20px 30px;
+	// 	border: 1px solid #ccc;
+	// 	cursor: pointer;
+	// }
+}
