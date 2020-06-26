@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Footer, Home, Error } from './'
+import { Home, Error } from './'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Dots from '../dots/Dots'
@@ -10,8 +10,6 @@ import Books from '../books/index'
 
 function App() {
 	return (
-		<>
-		{/* <Header /> */}
 		<Router>
 			<Switch>
 				<Route path="/" exact component={Home} />
@@ -23,8 +21,6 @@ function App() {
 				<Route component={Error} />
 			</Switch>
 		</Router>
-		{/* <Footer /> */}
-		</>
 	);
 }
 
