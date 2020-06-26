@@ -8,6 +8,8 @@ import Material from '../materialui/Material'
 import TicTacToe from '../tictactoe/index'
 import Books from '../books/index'
 
+import 'index.css'
+
 function App() {
 	return (
 		<Router>
