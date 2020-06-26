@@ -1,7 +1,9 @@
 import React, {PureComponent} from 'react'
 import { withContext } from './Context'
-import { AppBar, Tab, Tabs, withWidth } from '@material-ui/core'
+import { AppBar, Paper, Tab, Tabs, withWidth } from '@material-ui/core'
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = (theme) => ({
 	appBar: {

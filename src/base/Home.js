@@ -7,8 +7,7 @@ export default function Home() {
 			<a href="/dots">Dots</a> <br/>
 			<a href="/sketch">Sketch</a> <br/>
 			<a href="/material">Material</a> <br/>
-			<a href="/tictactoe">TicTacToe</a> <br/>
-			<a href="/books">Books</a>
+			<a href="/tictactoe">TicTacToe</a>
 		</>
 	);
 }

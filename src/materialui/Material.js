@@ -5,7 +5,7 @@ import Bottom from './Bottom'
 import { Provider } from './Context'
 import { muscles, exercises } from './data.js'
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { indigo, amber } from '@material-ui/core/colors'
 
 const theme = createMuiTheme({
