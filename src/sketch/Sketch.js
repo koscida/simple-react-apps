@@ -1,13 +1,21 @@
 import React from 'react';
+
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import {Pencil} from 'react-bootstrap-icons'
+
 import './style.scss';
-import { Button, Typography, Slider, Radio } from '@material-ui/core';
 
 const backgroundColor = "#ffccff";
 const drawColors = [
-	"#ccccff",
-	"#ccffcc",
-	"#ffffcc",
-	"#ccffff",
+	["#ccccff", "#aaaadd"],
+	["#ccffcc", "#aaddaa"],
+	["#ffffcc", "#ddddaa"],
+	["#ccffff", "#aadddd"],
 ];
 
 function Square(props) {
@@ -37,7 +45,7 @@ function Grid(props) {
 	});
 	
 	return(
-		<div id="grid" style={styles}>
+		<div id="grid" className="mx-sm-auto" style={styles}>
 			{gridSquares}
 		</div>
 	);
@@ -50,7 +58,7 @@ class Sketch extends React.Component {
 		
 		this.state = {
 			gridSize : 16,
-			drawColor : drawColors[0],
+			drawColor : drawColors[0][0],
 			gridData : new Array(25*25).fill(backgroundColor)
 		}
 	}
@@ -71,7 +79,9 @@ class Sketch extends React.Component {
 		});
 	}
 	
-	changeGridSize = (e, value) => {
+	changeGridSize = (e) => {
+		let value = e.target.value
+		console.log(value)
 		if(value !== this.state.gridSize) {
 			this.setState({
 				gridSize: value,
@@ -82,72 +92,81 @@ class Sketch extends React.Component {
 	
 	changeDrawColor = (e) => {
 		let value = e.target.value;
+		console.log(value)
 		this.setState({
 			drawColor : value
 		});
 	}
 	
 	render() {
-		let radios = [];
-		drawColors.forEach( (color, index) => {
-			radios.push(
-				<Radio
-					key={index}
-					checked={this.state.drawColor === color}
-					onChange={this.changeDrawColor}
-					value={color}
-					inputProps={{ 'aria-label': color }}
-					style={{
-						color: color
-					}}
-				/>
-			);
-		});
-		
+		const { gridSize, gridData, drawColor } = this.state
 		return (   
-			<div id="sketch">
-				<div id="options">
-					<div className="option">
-						<Typography id="gridSlider" gutterBottom>
-							Grid Size
-						</Typography>
-						<Slider
-							defaultValue={16}
-							aria-labelledby="gridSlider"
-							step={1}
-							marks
-							min={10}
-							max={25}
-							valueLabelDisplay="on"
-							onChange={this.changeGridSize}
-						/>
-					</div>
-					<div className="option">
-						<Typography id="gridSlider" gutterBottom>
-							Draw Color
-						</Typography>
-						{radios}
-					</div>
-					<div className="option">
-						<Button 
-							variant="outlined" 
-							color="secondary" 
-							onClick={this.clearGrid}
-						>
-							Clear grid
-						</Button>
-					</div>
-					<div>
-						<h1>Project Etch-A-Sketch</h1>
-						<p>"a browser version of something between a sketchpad and an Etch-A-Sketch"</p>
-						<p>Project idea from: <a href="https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project?ref=lnav">theodinproject.com/courses/web-development-101</a></p>
-					</div>
-				</div>
-				<Grid 
-					gridSize={this.state.gridSize}
-					gridData={this.state.gridData.slice(0,(this.state.gridSize*this.state.gridSize))}
-					changeColor = { i => this.changeSquareColor(i) }
-				/>
+			<div id="sketch" className="py-sm-3">
+				<Container>
+					<Row>
+						<Col>
+							<h1 className="text-center mb-sm-3">Sketch</h1>
+						</Col>
+					</Row>
+					<Row className="justify-content-md-center">
+						<Col>
+						
+							<Form>
+								<Form.Row className="justify-content-md-center">
+									<Form.Group controlId="formSize">
+										<Form.Label className="mr-sm-3">Size</Form.Label>
+										<input 
+											type="range" 
+											min="10" max="25" 
+											value={gridSize} 
+											id="myRange"
+											onChange={this.changeGridSize}
+										></input>
+									</Form.Group>
+									<Form.Group controlId="formSize" className="mx-sm-5">
+										<Form.Label className="mr-sm-3"><Pencil /></Form.Label>
+										<ButtonGroup aria-label="Edit color" size="sm">
+											{drawColors.map( ([color, hoverColor], index) => 
+												<Button
+													key={index}
+													checked={drawColor === color}
+													value={color}
+													// style={{
+													// 	background: (drawColor===color?hoverColor:color),
+													// 	color: (drawColor===color?'#fff':'#444')
+													// }}
+													style={{
+														color: (drawColor===color?'#aaa':hoverColor),
+														background: (drawColor===color?color:'#fafafa'),
+														fontWeight: 'bold'
+													}}
+													onClick={this.changeDrawColor}
+												>{color}</Button>
+											)}
+										</ButtonGroup>
+									</Form.Group>
+									<Form.Group controlId="formSize">
+										<Button 
+											variant="primary" 
+											onClick={this.clearGrid}
+											size="sm"
+										>Clear grid</Button>
+									</Form.Group>
+								</Form.Row>
+							</Form>
+							
+						</Col>
+					</Row>
+					<Row>
+						<Col>
+							<Grid 
+								gridSize={gridSize}
+								gridData={gridData.slice(0,(gridSize*gridSize))}
+								changeColor = { i => this.changeSquareColor(i) }
+							/>
+						</Col>
+					</Row>
+				</Container>
 			</div>
 		);
 	}

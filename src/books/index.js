@@ -4,7 +4,6 @@ import { BookContextProvider } from './contexts/BookContext'
 import { GenreContextProvider } from './contexts/GenreContext'
 import Books from './Books'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './books.scss'
 
 export default function () {

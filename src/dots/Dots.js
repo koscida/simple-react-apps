@@ -10,8 +10,8 @@ const images = [
 	// "images/dlanor-s-ATgfRqpFfFI-unsplash.jpg",
 	// "images/sharon-pittaway-iMdsjoiftZo-unsplash.jpg",
 	// "images/yash-garg-WSTF1QEUUWw-unsplash.jpg",
-	"images/pikrepo1.jpg",
-	"images/pikrepo2.jpg",
+	// "images/pikrepo1.jpg",
+	// "images/pikrepo2.jpg",
 	"images/Official_portrait_of_Barack_Obama.jpg"
 ]
 
@@ -22,25 +22,29 @@ class Dots extends React.Component {
 		super(props);
 		
 		this.state = {
-			imgSize : 1000,
-			imgData : null,
-			imgUrl : images[Math.floor(Math.random() * images.length)],
-			boxes : []
+			dots: [{size: 500}]
 		}
-		this.canvasRef = React.createRef();
-		this.imageRef = React.createRef();
+		
+		// this.state = {
+		// 	imgSize : 1000,
+		// 	imgData : null,
+		// 	imgUrl : images[Math.floor(Math.random() * images.length)],
+		// 	boxes : []
+		// }
+		// this.canvasRef = React.createRef();
+		// this.imageRef = React.createRef();
 	}
 	
 	componentDidMount () {
 		console.log("...in did mount...");
-		console.log("imgSize in mount: " + this.state.imgSize);
+		// console.log("imgSize in mount: " + this.state.imgSize);
 		
 		
-		var initialBox = [{
-			size : this.state.imgSize,
-			mid : [(this.state.imgSize/2),(this.state.imgSize/2)]
-		}]
-		this.setState({boxes : initialBox});
+		// var initialBox = [{
+		// 	size : this.state.imgSize,
+		// 	mid : [(this.state.imgSize/2),(this.state.imgSize/2)]
+		// }]
+		// this.setState({boxes : initialBox});
 		
 		// this.canvasRef.current.width = this.state.imgSize;
 		// this.canvasRef.current.height = this.state.imgSize;
@@ -175,66 +179,86 @@ class Dots extends React.Component {
 	//     return rgb;
 	// }
 	
-	drawBoxes(boxesToGenerate, refIds="0") {
-		
-		const boxes = boxesToGenerate.map( (box, index) => {
+	drawDots(dots) {
+		return dots.map( (box, index) => {
 			if(Array.isArray(box)) {
-				return(
-					<div
-						key={index}
-						className="boxContainer" 
-					>{this.drawBoxes(box, refIds)}</div>
-				);
+				return this.drawDots(box)
 			} else {
-				let rgb = this.getRGB(box);
-				let styles = {
-					width : box.size,
-					height : box.size,
-					background : `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`
-				};
-				
-				return(
-					<div
-						key={index}
-						className="box" 
-						style={styles}
-						ref={refIds += index}
-						onMouseEnter={this.revealBox}
-					></div>
-				);
+				return <div 
+					key={index} 
+					style={{width: box.size, height: box.size}} 
+					className="box"
+					onMouseEnter={this.revealBox}
+				></div>
 			}
-		});
-			
-		return (boxes);
+		})
 	}
-	
-	revealBox = (e) => {
-		console.log("...revealBox...");
-		console.log(e.target);
+	// drawBoxes(boxesToGenerate, refIds="0") {
 		
-		// const targetSize = parseInt(e.target.dataset.size);
-		// if(targetSize > 10) {
-		// 	var nextSize = targetSize / 2;
-		// 	var nextOffset = ~~(nextSize / 2);
-		// 	var mid = JSON.parse(e.target.dataset.mid);
-		// }
-	}
+	// 	const boxes = boxesToGenerate.map( (box, index) => {
+	// 		if(Array.isArray(box)) {
+	// 			return(
+	// 				<div
+	// 					key={index}
+	// 					className="boxContainer" 
+	// 				>{this.drawBoxes(box, refIds)}</div>
+	// 			);
+	// 		} else {
+	// 			let rgb = this.getRGB(box);
+	// 			let styles = {
+	// 				width : box.size,
+	// 				height : box.size,
+	// 				background : `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`
+	// 			};
+				
+	// 			return(
+	// 				<div
+	// 					key={index}
+	// 					className="box" 
+	// 					style={styles}
+	// 					ref={refIds += index}
+	// 					onMouseEnter={this.revealBox}
+	// 				></div>
+	// 			);
+	// 		}
+	// 	});
+			
+	// 	return (boxes);
+	// }
 	
-	getRGB(box) {
-		var rgb = {r:100,g:100,b:100};
-		return rgb;
-	}
+	// revealBox = (e) => {
+	// 	// console.log("...revealBox...");
+	// 	console.log(e.target);
+		
+	// 	// const targetSize = parseInt(e.target.dataset.size);
+	// 	// if(targetSize > 10) {
+	// 	// 	var nextSize = targetSize / 2;
+	// 	// 	var nextOffset = ~~(nextSize / 2);
+	// 	// 	var mid = JSON.parse(e.target.dataset.mid);
+	// 	// }
+	// }
+	
+	// getRGB(box) {
+	// 	var rgb = {r:100,g:100,b:100};
+	// 	return rgb;
+	// }
+	
+	
 	
 	render() {
+		const { dots } = this.state
 		console.log("...render...");
 		return (   
 			<div id="dots">
-				<div id="boxes" className="boxContainer">
-					{this.drawBoxes(this.state.boxes)}
+				<div className="boxContainer">
+					{this.drawDots(dots)}
+					{/* <div id="boxes" className="boxContainer">
+						{this.drawBoxes(this.state.boxes)}
+					</div>
+					<canvas ref={this.canvasRef} width={this.state.imgSize} height={this.state.imgSize}>
+						<img ref={this.imageRef} src={this.state.imgUrl} alt=""/>
+					</canvas> */}
 				</div>
-				<canvas ref={this.canvasRef} width={this.state.imgSize} height={this.state.imgSize}>
-					<img ref={this.imageRef} src={this.state.imgUrl} alt=""/>
-				</canvas>
 			</div>
 		);
 	}

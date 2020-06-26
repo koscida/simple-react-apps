@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Error } from './'
+import { Home, All, Error } from './'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Dots from '../dots/Dots'
@@ -8,6 +8,7 @@ import Material from '../materialui/Material'
 import TicTacToe from '../tictactoe/index'
 import Books from '../books/index'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 		<Router>
 			<Switch>
 				<Route path="/" exact component={Home} />
+				<Route path="/all" component={All} />
 				<Route path="/dots" component={Dots} />
 				<Route path="/sketch" component={Sketch} />
 				<Route path="/material" component={Material} />
