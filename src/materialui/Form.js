@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -10,16 +9,16 @@ import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
 
 
-const styles = theme => ({
-	formControl: {
-		margin: theme.spacing(1),
-		minWidth: 120,
-		width: 300
-	},
-	selectEmpty: {
-		marginTop: theme.spacing(2),
-	},
-})
+// const styles = theme => ({
+// 	formControl: {
+// 		margin: theme.spacing(1),
+// 		minWidth: 120,
+// 		width: 300
+// 	},
+// 	selectEmpty: {
+// 		marginTop: theme.spacing(2),
+// 	},
+// })
 
 export default class Form extends React.Component {
 	
@@ -63,7 +62,7 @@ export default class Form extends React.Component {
 	
 	render() {
 		
-		const { classes, muscles, onCancel } = this.props,
+		const { muscles, onCancel } = this.props,
 			{ selectedExercise, selectedExercise : { title, description, muscleGroup } } = this.state
 		
 		return (
