@@ -1,0 +1,20 @@
+#dots {
+	.boxContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.box {
+		border-radius: 50%;
+		background: #333;
+	}
+
+	canvas {
+		position: absolute;
+		top: -100%;
+		left: 0;
+		z-index: -1;
+	}
+}

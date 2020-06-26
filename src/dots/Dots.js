@@ -228,14 +228,14 @@ class Dots extends React.Component {
 	render() {
 		console.log("...render...");
 		return (   
-			<>
+			<div id="dots">
 				<div id="boxes" className="boxContainer">
 					{this.drawBoxes(this.state.boxes)}
 				</div>
 				<canvas ref={this.canvasRef} width={this.state.imgSize} height={this.state.imgSize}>
 					<img ref={this.imageRef} src={this.state.imgUrl} alt=""/>
 				</canvas>
-			</>
+			</div>
 		);
 	}
 }
