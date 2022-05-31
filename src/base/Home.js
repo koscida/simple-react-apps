@@ -14,20 +14,19 @@ function Home() {
 		<>
 			<Container fluid="md">
 				<h1>Home</h1>
+				<p>Simple React examples</p>
 				<Row>
-					
-							{navLinks.filter( nav => (nav.display && (nav.isHome === undefined || !nav.isHome)) ).map( (nav, i) => 
-							<Col key={i}>
-								<Card key={i}>
-									<Card.Body>
-										<Card.Title>{nav.name}</Card.Title>
-										<Card.Text>Some text</Card.Text>
-										<Card.Link href={nav.link}>Link <ArrowUpRight /></Card.Link>
-									</Card.Body>
-								</Card>
-								</Col>
-							)}
-					
+					{navLinks.filter( nav => (nav.display && (nav.isHome === undefined || !nav.isHome)) ).map( (nav, i) => 
+					<Col key={i}>
+						<Card key={i}>
+							<Card.Body>
+								<Card.Title>{nav.name}</Card.Title>
+								<Card.Text>Some text</Card.Text>
+								<Card.Link href={nav.link}>Link <ArrowUpRight /></Card.Link>
+							</Card.Body>
+						</Card>
+						</Col>
+					)}
 				</Row>
 			</Container>
 		</>
