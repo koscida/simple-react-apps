@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import NavBar from './components/NavBar'
 import BookList from './components/BookList'
 import BookStats from './components/BookStats'
 import AddBookForm from './components/AddBookForm'
@@ -16,21 +15,15 @@ const Books = () => {
 	return (
 		<div id="books" className={ (isLightTheme ? 'light' : 'dark') + " p-sm-3" }>
 			<Container>
-				<Row className="mb-sm-3">
-					<Col>
-						<NavBar />
-					</Col>
-				</Row>
 				<Row>
-					<Col sm="4">
+					<Col md="4">
 						<BookStats />
-						<Accordion defaultActiveKey="-1">
+						<Accordion>
 							<AddBookForm />
 							<EditGenresForm />
 						</Accordion>
 					</Col>
-					{/* <Col sm={{ span: 8, offset: 2 }}> */}
-					<Col sm="8" className="pl-sm-0">
+					<Col md="8">
 						<BookList />
 					</Col>
 				</Row>

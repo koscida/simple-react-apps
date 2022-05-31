@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { BookContext } from '../contexts/BookContext'
 import BookDetails from './BookDetails'
-import CardColumns from 'react-bootstrap/CardColumns'
 
 const BookList = () => {
 	const { books } = useContext(BookContext)
@@ -9,9 +8,9 @@ const BookList = () => {
 	return (
 		<div id="bookList">
 			{books.length > 0
-				? <CardColumns>
+				? <div>
 						{ books.map( book => <BookDetails book={book} key={book.id} /> )}
-					</CardColumns>
+					</div>
 				: <p>No books to read :(</p>
 			}
 		</div>

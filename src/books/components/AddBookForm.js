@@ -34,57 +34,56 @@ const AddBookForm = () => {
 	}
 	
 	return (
-		<Card>
-			<Accordion.Toggle as={Card.Header} eventKey="0">
-				Add Book
-			</Accordion.Toggle>
-			<Accordion.Collapse eventKey="0">
-				<Card.Body>
-					
-					<Form onSubmit={handleAdd}>
-					
-						<Form.Group controlId="formTitle">
-							<Form.Label>Title</Form.Label>
-							<Form.Control 
-								required
-								type="text" 
-								placeholder="Enter title..." 
-								onChange={handleChange("title")} 
-								value={newBook.title}
-							/>
-						</Form.Group>
+		
+			<Accordion.Item eventKey="0">
+				<Accordion.Header>
+					Add Book
+				</Accordion.Header>
+				<Accordion.Body>
+						
+						<Form onSubmit={handleAdd}>
+						
+							<Form.Group controlId="formTitle">
+								<Form.Label>Title</Form.Label>
+								<Form.Control 
+									required
+									type="text" 
+									placeholder="Enter title..." 
+									onChange={handleChange("title")} 
+									value={newBook.title}
+								/>
+							</Form.Group>
 
-						<Form.Group controlId="formAuthor">
-							<Form.Label>Author</Form.Label>
-							<Form.Control 
-								required 
-								type="text" 
-								placeholder="Enter author..." 
-								onChange={handleChange("author")} 
-								value={newBook.author}
-							/>
-						</Form.Group>
+							<Form.Group controlId="formAuthor">
+								<Form.Label>Author</Form.Label>
+								<Form.Control 
+									required 
+									type="text" 
+									placeholder="Enter author..." 
+									onChange={handleChange("author")} 
+									value={newBook.author}
+								/>
+							</Form.Group>
+							
+							<Form.Group controlId="formGenre">
+								<Form.Label>Genre</Form.Label>
+								<Form.Control 
+									required
+									as="select"
+									onChange={handleChange("genre")} 
+								>
+									{genres.map( (genre, index) => <option key={index} value={genre}>{genre}</option> )}
+								</Form.Control>
+							</Form.Group>
+							
+							<Button variant="primary" type="submit" onClick={handleAdd}>
+								Add Book
+							</Button>
+							
+						</Form>
 						
-						<Form.Group controlId="formGenre">
-							<Form.Label>Genre</Form.Label>
-							<Form.Control 
-								required
-								as="select"
-								onChange={handleChange("genre")} 
-							>
-								{genres.map( (genre, index) => <option key={index} value={genre}>{genre}</option> )}
-							</Form.Control>
-						</Form.Group>
-						
-						<Button variant="primary" type="submit" onClick={handleAdd}>
-							Add Book
-						</Button>
-						
-					</Form>
-					
-				</Card.Body>
-			</Accordion.Collapse>
-		</Card>
+				</Accordion.Body>
+			</Accordion.Item>
 	)
 }
 

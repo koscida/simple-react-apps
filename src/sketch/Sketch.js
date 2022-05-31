@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
+import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import {Pencil} from 'react-bootstrap-icons'
@@ -101,62 +102,55 @@ class Sketch extends React.Component {
 	render() {
 		const { gridSize, gridData, drawColor } = this.state
 		return (   
-			<div id="sketch" className="py-sm-3">
+			<div id="sketch" className="py-sm-3 text-center">
 				<Container>
 					<Row>
 						<Col>
 							<h1 className="text-center mb-sm-3">Sketch</h1>
 						</Col>
 					</Row>
-					<Row className="justify-content-md-center">
-						<Col>
-						
-							<Form>
-								<Form.Row className="justify-content-md-center">
-									<Form.Group controlId="formSize">
-										<Form.Label className="mr-sm-3">Size</Form.Label>
-										<input 
-											type="range" 
-											min="10" max="25" 
-											value={gridSize} 
-											id="myRange"
-											onChange={this.changeGridSize}
-										></input>
-									</Form.Group>
-									<Form.Group controlId="formSize" className="mx-sm-5">
-										<Form.Label className="mr-sm-3"><Pencil /></Form.Label>
-										<ButtonGroup aria-label="Edit color" size="sm">
-											{drawColors.map( ([color, hoverColor], index) => 
-												<Button
-													key={index}
-													checked={drawColor === color}
-													value={color}
-													// style={{
-													// 	background: (drawColor===color?hoverColor:color),
-													// 	color: (drawColor===color?'#fff':'#444')
-													// }}
-													style={{
-														color: (drawColor===color?'#aaa':hoverColor),
-														background: (drawColor===color?color:'#fafafa'),
-														fontWeight: 'bold'
-													}}
-													onClick={this.changeDrawColor}
-												>{color}</Button>
-											)}
-										</ButtonGroup>
-									</Form.Group>
-									<Form.Group controlId="formSize">
-										<Button 
-											variant="primary" 
-											onClick={this.clearGrid}
-											size="sm"
-										>Clear grid</Button>
-									</Form.Group>
-								</Form.Row>
-							</Form>
-							
-						</Col>
-					</Row>
+					<Form>
+						<Row className="justify-content-md-center">
+							<Col>
+								<Form.Group controlId="formSize" className="mb-3">
+									<Form.Range id="myRange" value={gridSize} onChange={this.changeGridSize} min="10" max="25" />
+								</Form.Group>
+							</Col>
+							<Col>
+								<Form.Group controlId="formColor" className="mb-3">
+									<Form.Label className="mx-3"><Pencil /></Form.Label>
+									<ButtonGroup aria-label="Edit color" size="sm">
+										{drawColors.map( ([color, hoverColor], index) => 
+											<Button
+												key={index}
+												checked={drawColor === color}
+												value={color}
+												// style={{
+												// 	background: (drawColor===color?hoverColor:color),
+												// 	color: (drawColor===color?'#fff':'#444')
+												// }}
+												style={{
+													color: (drawColor===color?'#aaa':hoverColor),
+													background: (drawColor===color?color:'#fafafa'),
+													fontWeight: 'bold'
+												}}
+												onClick={this.changeDrawColor}
+											>{color}</Button>
+										)}
+									</ButtonGroup>
+								</Form.Group>
+							</Col>
+							<Col>
+								<Form.Group controlId="formClear" className="mb-3">
+									<Button 
+										variant="primary" 
+										onClick={this.clearGrid}
+										size="sm"
+									>Clear grid</Button>
+								</Form.Group>
+							</Col>
+						</Row>
+					</Form>
 					<Row>
 						<Col>
 							<Grid 
@@ -172,4 +166,4 @@ class Sketch extends React.Component {
 	}
 }
 
-export default Sketch;
+export default Sketch

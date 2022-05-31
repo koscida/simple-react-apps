@@ -182,19 +182,25 @@ class Game extends React.Component {
 		}
 		
 		return (
-			<div id="tictactoe" className="game">
-				<div className="game-board">
-					<Board 
-						squares={current.squares} 
-						boardSize={this.state.boardSize} 
-						onClick={i => this.handleClick(i)} 
-						winner={winner}
-					/>
-				</div>
-				<div className="game-info">
-					<div>{status}</div>
-					<div><button onClick={() => this.sortMoves()}>Moves Sort</button></div>
-					<ol>{moves}</ol>
+			<div id="tictactoe" className="game container">
+				<div className='row'>
+					<div className="col-6 mx-auto">
+						<div className='row'>
+					<div className="col">
+						<Board 
+							squares={current.squares} 
+							boardSize={this.state.boardSize} 
+							onClick={i => this.handleClick(i)} 
+							winner={winner}
+						/>
+					</div>
+					<div className="col">
+						<div>{status}</div>
+						<div><button onClick={() => this.sortMoves()}>Moves Sort</button></div>
+						<ol>{moves}</ol>
+					</div>
+					</div>
+					</div>
 				</div>
 			</div>
 		);

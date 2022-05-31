@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components";
-import { Typography } from '@material-ui/core'
 
 const FooterContainer = styled.div`
 	text-align: center;
@@ -14,7 +13,7 @@ const FooterContainer = styled.div`
 function Footer() {
 	return (
 		<FooterContainer>
-			<Typography variant="overline">&copy; Brittany Ann Kos</Typography>
+			<p>&copy; Brittany Ann Kos</p>
 		</FooterContainer>	
 	)
 }

@@ -6,7 +6,7 @@ const BookStats = () => {
 	const booksCount = books.length
 	
 	return (
-		<div id="bookStats">
+		<div id="bookStats" className='mb-2'>
 				You have {booksCount} book{booksCount === 1 ? '' : 's'} on your reading list! <br/>
 				{Object.entries(
 					books.reduce( (acc, {genre}) => {

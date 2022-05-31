@@ -6,7 +6,7 @@ import { BookContext } from '../contexts/BookContext'
 const BookDetails = ({ book }) => {
 	const { deleteBook } = useContext(BookContext)
 	return (
-		<Card key={book.id}>
+		<Card key={book.id} className="mb-2">
 			<Card.Header>{book.title}</Card.Header>
 			<Card.Body>
 				<p>{book.author}</p>

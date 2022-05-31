@@ -1,11 +1,5 @@
 #sketch {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 	background: #fdf1f9;
-	height: 100vh;
-	overflow-y: scroll;
 	
 	#grid {
 		display: grid;

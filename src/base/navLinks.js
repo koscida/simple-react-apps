@@ -1,5 +1,11 @@
 export const navLinks = [
 	{
+		name: 'Home',
+		link: '/',
+		display: true.valueOf,
+		isHome: true
+	},
+	{
 		name: 'Dots',
 		link: '/dots',
 		display: false
@@ -14,7 +20,7 @@ export const navLinks = [
 	},{
 		name: 'TicTacToe',
 		link: '/tictactoe',
-		display: false
+		display: true
 	},{
 		name: 'Books',
 		link: '/books',

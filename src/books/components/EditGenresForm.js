@@ -16,13 +16,11 @@ const EditGenresForm = () => {
 	}
 	
 	return (
-		
-			<Card>
-				<Accordion.Toggle as={Card.Header} eventKey="1">
+			<Accordion.Item eventKey="1">
+				<Accordion.Header>
 					Edit Genres
-				</Accordion.Toggle>
-				<Accordion.Collapse eventKey="1">
-					<Card.Body>
+				</Accordion.Header>
+				<Accordion.Body>
 						
 						<Form onSubmit={handleAdd}>
 							<Form.Group controlId="formGenre">
@@ -53,9 +51,8 @@ const EditGenresForm = () => {
 							))}
 						</div>
 						
-					</Card.Body>
-				</Accordion.Collapse>
-			</Card>
+				</Accordion.Body>
+			</Accordion.Item>
 	)
 }
 
