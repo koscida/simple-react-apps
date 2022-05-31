@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 import { navLinks } from './navLinks'
@@ -46,11 +45,8 @@ function App() {
 					<Route exact path="/" element={<Home />} />
 					<Route path="/dots" element={<Dots />} />
 					<Route path="/sketch" element={<Sketch />} />
-					{/* <Route path="/material" element={<Material />} />*/}
 					<Route path="/tictactoe" element={<TicTacToe />} />
 					<Route path="/books" element={<Books />} />
-					{/* <Route path="*" render={() => <Redirect to="/" />} />
-					<Route component={Error} /> */}
 				</Routes>
 			</Container>
 			
