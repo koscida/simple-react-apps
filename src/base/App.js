@@ -24,16 +24,17 @@ function App() {
 	return (
 		<Router>
 			<Navbar bg="light" expand="lg" fixed="top">
-				<Container fluid>
-					<Navbar.Brand href="/">things</Navbar.Brand>
+				<Container>
+					<Navbar.Brand href="/">Simple React Apps</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
 						<Nav>
-							<NavDropdown title="Links" id="basic-nav-dropdown">
+							<NavDropdown title="React Apps" id="basic-nav-dropdown">
 								{navLinks.filter( nav => nav.display ).map( (nav, i) => 
 									<NavDropdown.Item href={nav.link} key={i}>{nav.name}</NavDropdown.Item>
 								)}
 							</NavDropdown>
+							<Nav.Link href="https://koscida-simple-node-apps.herokuapp.com/">Simple-Node-Apps</Nav.Link>
 							<Nav.Link href="http://brittanyannkos.com/">BrittanyAnnKos.com</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>

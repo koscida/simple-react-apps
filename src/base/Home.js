@@ -13,8 +13,10 @@ function Home() {
 	return (
 		<>
 			<Container fluid="md">
-				<h1>Home</h1>
-				<p>Simple React examples</p>
+				<Row className='my-3'>
+					<h1>Home</h1>
+					<p>Simple React JS apps</p>
+				</Row>
 				<Row>
 					{navLinks.filter( nav => (nav.display && (nav.isHome === undefined || !nav.isHome)) ).map( (nav, i) => 
 					<Col key={i}>
