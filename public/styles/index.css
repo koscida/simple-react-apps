@@ -9,10 +9,6 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-.app {
-	margin: 60px 0 0 0;
-	padding: 0;
-}
 
 .navbar {
 	background: var(--purple);
@@ -24,6 +20,7 @@
 	background-size: 400%;
 	background-position: left;
 	animation: pulse 60s infinite;
+	height: 60px;
 }
 @keyframes pulse {
 	0% {
@@ -37,4 +34,9 @@
 	100% {
 		background-position: left;
 	}
+}
+
+.app {
+	margin: 60px 0 0 0;
+	padding: 0;
 }

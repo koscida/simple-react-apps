@@ -4,26 +4,35 @@ export const navLinks = [
 		link: '/',
 		display: true.valueOf,
 		isHome: true
-	},
-	{
-		name: 'Dots',
-		link: '/dots',
-		display: false
 	},{
-		name: 'Sketch',
-		link: '/sketch',
-		display: true
-	},{
-		name: 'Material',
-		link: '/material',
-		display: false
-	},{
-		name: 'TicTacToe',
-		link: '/tictactoe',
+		name: 'Cat Paradise',
+		link: '/cat-paradise',
+		description: 'Uses axios to call an open api',
 		display: true
 	},{
 		name: 'Books',
 		link: '/books',
+		description: 'Create a book reading list with custom genres',
 		display: true
-	},
+	},{
+		name: 'Material',
+		link: '/material',
+		description: 'Demo of the Material UI',
+		display: false
+	},{
+		name: 'Sketch',
+		link: '/sketch',
+		description: 'Uses state and callbacks to draw on a canvas',
+		display: true
+	},{
+		name: 'Dots',
+		link: '/dots',
+		description: 'Uncover a pixilated image',
+		display: false
+	},{
+		name: 'TicTacToe',
+		link: '/tictactoe',
+		description: 'Use state to store data',
+		display: true
+	}
 ]

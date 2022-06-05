@@ -9,6 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { navLinks } from './navLinks'
 
 import Home from './Home'
@@ -16,9 +18,9 @@ import Dots from '../dots/Dots'
 import Sketch from '../sketch/Sketch'
 import TicTacToe from '../tictactoe/index'
 import Books from '../books/index'
+import CatParadise from '../cat-paradise/CatParadise'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css'
+
 
 function App() {
 	return (
@@ -41,15 +43,16 @@ function App() {
 				</Container>
 			</Navbar>
 			
-			<Container fluid className='app'>
+			<div className='app'>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
-					<Route path="/dots" element={<Dots />} />
-					<Route path="/sketch" element={<Sketch />} />
-					<Route path="/tictactoe" element={<TicTacToe />} />
+					<Route path="/cat-paradise" element={<CatParadise />} />
 					<Route path="/books" element={<Books />} />
+					<Route path="/sketch" element={<Sketch />} />
+					<Route path="/dots" element={<Dots />} />
+					<Route path="/tictactoe" element={<TicTacToe />} />
 				</Routes>
-			</Container>
+			</div>
 			
 		</Router>
 	);

@@ -1,8 +1,6 @@
 import React from 'react';
 import { navLinks } from './navLinks'
 
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -14,7 +12,7 @@ function Home() {
 		<>
 			<Container fluid="md">
 				<Row className='my-3'>
-					<h1>Home</h1>
+					<h1 className='my-1'>Home</h1>
 					<p>Simple React.js app examples</p>
 				</Row>
 				<Row>
@@ -23,7 +21,7 @@ function Home() {
 						<Card key={i}>
 							<Card.Body>
 								<Card.Title>{nav.name}</Card.Title>
-								<Card.Text>Some text</Card.Text>
+								<Card.Text>{nav.description}</Card.Text>
 								<Card.Link href={nav.link}>Link <ArrowUpRight /></Card.Link>
 							</Card.Body>
 						</Card>
