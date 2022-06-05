@@ -23,7 +23,7 @@ import './index.css'
 function App() {
 	return (
 		<Router>
-			<Navbar bg="light" expand="lg" fixed="top">
+			<Navbar expand="lg" fixed="top" variant="dark" >
 				<Container>
 					<Navbar.Brand href="/">Simple React Apps</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,7 +35,7 @@ function App() {
 								)}
 							</NavDropdown>
 							<Nav.Link href="https://koscida-simple-node-apps.herokuapp.com/">Simple-Node-Apps</Nav.Link>
-							<Nav.Link href="http://brittanyannkos.com/">BrittanyAnnKos.com</Nav.Link>
+							<Nav.Link href="http://brittanyannkos.com/" target="_blank">BrittanyAnnKos.com</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

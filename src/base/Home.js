@@ -15,7 +15,7 @@ function Home() {
 			<Container fluid="md">
 				<Row className='my-3'>
 					<h1>Home</h1>
-					<p>Simple React JS apps</p>
+					<p>Simple React.js app examples</p>
 				</Row>
 				<Row>
 					{navLinks.filter( nav => (nav.display && (nav.isHome === undefined || !nav.isHome)) ).map( (nav, i) => 
