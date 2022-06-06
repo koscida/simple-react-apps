@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 import CountryCard from './CountryCard'
-import PopulationGraph from './PopulationGraph'
-import LanguageGraph from './LanguageGraph'
+import LanguageGraph from './graph/LanguageGraph'
+import GenGraph from './graph/GenGraph'
 
 const sortFunc = (a,b) => (a.name.common).localeCompare(b.name.common)
 
@@ -78,14 +78,26 @@ const CountryList = ({
 					<div className='text-center m-2'>
 						<button className='btn btn-danger btn-lg m-3' onClick={() => setStat('population')}>Population</button>
 						<button className='btn btn-danger btn-lg m-3' onClick={() => setStat('languages')}>Languages</button>
+						<button className='btn btn-danger btn-lg m-3' onClick={() => setStat('area')}>Area</button>
 					</div>
 				</div>
 				<div className='row'>
-					{data &&
-						stat === 'population' 
-							? <PopulationGraph data={searchResults} /> 
-							: <LanguageGraph data={searchResults} />
-					}
+					<div className="col-lg-8 col-md-10 mx-auto">
+						{stat === 'languages' 
+							? <LanguageGraph data={searchResults} />
+							: stat === 'area' 
+							? <GenGraph 
+								data={searchResults} 
+								statKey={stat}
+								header={'Largest countries by area'}
+								/> 
+							: <GenGraph 
+								data={searchResults} 
+								statKey={stat}
+								header={'Most populated countries'}
+								/> 
+						}
+					</div>
 				</div>
 			</div>
 		</section>
