@@ -11,21 +11,21 @@ function Home() {
 	return (
 		<>
 			<Container fluid="md">
-				<Row className='my-3'>
+				<Row className='py-4'>
 					<h1 className='my-1'>Home</h1>
 					<p>Simple React.js app examples</p>
 				</Row>
 				<Row>
 					{navLinks.filter( nav => (nav.display && (nav.isHome === undefined || !nav.isHome)) ).map( (nav, i) => 
-					<Col key={i}>
-						<Card key={i}>
-							<Card.Body>
-								<Card.Title>{nav.name}</Card.Title>
-								<Card.Text>{nav.description}</Card.Text>
-								<Card.Link href={nav.link}>Link <ArrowUpRight /></Card.Link>
-							</Card.Body>
-						</Card>
-						</Col>
+						<div className='col-lg-3 col-md-4 col-sm-6 mb-4' key={i}>
+							<Card key={i}>
+								<Card.Body>
+									<Card.Title>{nav.name}</Card.Title>
+									<Card.Text>{nav.description}</Card.Text>
+									<Card.Link href={nav.link}>Link <ArrowUpRight /></Card.Link>
+								</Card.Body>
+							</Card>
+						</div>
 					)}
 				</Row>
 			</Container>

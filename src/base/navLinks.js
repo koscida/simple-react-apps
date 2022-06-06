@@ -5,6 +5,11 @@ export const navLinks = [
 		display: true.valueOf,
 		isHome: true
 	},{
+		name: 'Countries of the World',
+		link: '/countries',
+		description: 'Use axios to call an api and manipulate data',
+		display: true
+	},{
 		name: 'Cat Paradise',
 		link: '/cat-paradise',
 		description: 'Uses axios to call an open api',

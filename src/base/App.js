@@ -19,13 +19,14 @@ import Sketch from '../sketch/Sketch'
 import TicTacToe from '../tictactoe/index'
 import Books from '../books/index'
 import CatParadise from '../cat-paradise/CatParadise'
+import Countries from '../countries/Countries'
 
 
 
 function App() {
 	return (
 		<Router>
-			<Navbar expand="lg" fixed="top" variant="dark" >
+			<Navbar expand="lg" variant="dark" >
 				<Container>
 					<Navbar.Brand href="/">Simple React Apps</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -46,6 +47,7 @@ function App() {
 			<div className='app'>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
+					<Route path="/countries" element={<Countries />} />
 					<Route path="/cat-paradise" element={<CatParadise />} />
 					<Route path="/books" element={<Books />} />
 					<Route path="/sketch" element={<Sketch />} />
