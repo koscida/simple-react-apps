@@ -1,25 +1,3 @@
-/* Color Theme Swatches in Hex */
-.UI/UX-1-hex { color: #191659; }
-.UI/UX-2-hex { color: #2E3159; }
-.UI/UX-3-hex { color: #2EA67A; }
-.UI/UX-4-hex { color: #730202; }
-.UI/UX-5-hex { color: #D92525; }
-
-/* Color Theme Swatches in RGBA */
-.UI/UX-1-rgba { color: rgba(24, 22, 89, 1); }
-.UI/UX-2-rgba { color: rgba(46, 48, 89, 1); }
-.UI/UX-3-rgba { color: rgba(46, 165, 121, 1); }
-.UI/UX-4-rgba { color: rgba(114, 2, 2, 1); }
-.UI/UX-5-rgba { color: rgba(216, 36, 36, 1); }
-
-/* Color Theme Swatches in HSLA */
-.UI/UX-1-hsla { color: hsla(241, 59, 21, 1); }
-.UI/UX-2-hsla { color: hsla(236, 31, 26, 1); }
-.UI/UX-3-hsla { color: hsla(157, 56, 41, 1); }
-.UI/UX-4-hsla { color: hsla(0, 96, 22, 1); }
-.UI/UX-5-hsla { color: hsla(0, 70, 49, 1); }
-
-
 :root {
 	--c-green: #2EA67A;
 	--c-red: #D92525;
@@ -27,6 +5,28 @@
 	--c-navy: #1D438A;
 	--c-black: #191659;
 }
+
+/* Color Theme Swatches in Hex */
+.UIUX-1-hex { color: #191659; }
+.UIUX-2-hex { color: #2E3159; }
+.UIUX-3-hex { color: #2EA67A; }
+.UIUX-4-hex { color: #730202; }
+.UIUX-5-hex { color: #D92525; }
+
+/* Color Theme Swatches in RGBA */
+.UIUX-1-rgba { color: rgba(24, 22, 89, 1); }
+.UIUX-2-rgba { color: rgba(46, 48, 89, 1); }
+.UIUX-3-rgba { color: rgba(46, 165, 121, 1); }
+.UIUX-4-rgba { color: rgba(114, 2, 2, 1); }
+.UIUX-5-rgba { color: rgba(216, 36, 36, 1); }
+
+/* Color Theme Swatches in HSLA */
+.UIUX-1-hsla { color: hsla(241, 59, 21, 1); }
+.UIUX-2-hsla { color: hsla(236, 31, 26, 1); }
+.UIUX-3-hsla { color: hsla(157, 56, 41, 1); }
+.UIUX-4-hsla { color: hsla(0, 96, 22, 1); }
+.UIUX-5-hsla { color: hsla(0, 70, 49, 1); }
+
 body {
 	color: var(--c-black);
 }
