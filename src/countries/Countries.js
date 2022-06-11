@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/App.css';
+import './styles/App.scss';
 
 import useFetchData from './useFetchData'
 
@@ -15,7 +15,7 @@ const Countries = (props) => {
 	} = useFetchData();
 		
 	return (
-		<div className='App'>
+		<div className='CountryApp'>
 			<a name="home"></a>
 			
 			<Header
