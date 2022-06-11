@@ -10,6 +10,11 @@ export const navLinks = [
 		description: 'Use axios to call an api and manipulate data',
 		display: true
 	},{
+		name: 'Hexadecimal Colors',
+		link: '/hexadecimal-colors',
+		description: 'Generates random hexadecimal colors',
+		display: true
+	},{
 		name: 'Cat Paradise',
 		link: '/cat-paradise',
 		description: 'Uses axios to call an open api',

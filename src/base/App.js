@@ -19,6 +19,7 @@ import Sketch from '../sketch/Sketch'
 import TicTacToe from '../tictactoe/index'
 import Books from '../books/index'
 import CatParadise from '../cat-paradise/CatParadise'
+import HexadecimalColors from '../hexadecimal-colors/App'
 import Countries from '../countries/Countries'
 
 
@@ -48,6 +49,7 @@ function App() {
 				<Routes>
 					<Route exact path="/" element={<Home />} />
 					<Route path="/countries" element={<Countries />} />
+					<Route path="/hexadecimal-colors" element={<HexadecimalColors />} />
 					<Route path="/cat-paradise" element={<CatParadise />} />
 					<Route path="/books" element={<Books />} />
 					<Route path="/sketch" element={<Sketch />} />
