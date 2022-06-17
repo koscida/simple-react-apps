@@ -5,6 +5,11 @@ export const navLinks = [
 		display: true.valueOf,
 		isHome: true
 	},{
+		name: 'Fake Twitter',
+		link: '/twitter-clone',
+		description: 'Create a CRUD app',
+		display: true
+	},{
 		name: 'Countries of the World',
 		link: '/countries',
 		description: 'Use axios to call an api and manipulate data',
