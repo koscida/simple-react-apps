@@ -22,6 +22,7 @@ import CatParadise from '../cat-paradise/CatParadise'
 import HexadecimalColors from '../hexadecimal-colors/App'
 import Countries from '../countries/Countries'
 import FakeTwitter from '../twitter-clone/App'
+import Keeper from '../keeper/App'
 
 
 
@@ -49,6 +50,7 @@ function App() {
 			<div className='app'>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
+					<Route path="/keeper" element={<Keeper />} />
 					<Route path="/twitter-clone" element={<FakeTwitter />} />
 					<Route path="/countries" element={<Countries />} />
 					<Route path="/hexadecimal-colors" element={<HexadecimalColors />} />

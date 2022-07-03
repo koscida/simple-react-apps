@@ -5,6 +5,11 @@ export const navLinks = [
 		display: true.valueOf,
 		isHome: true
 	},{
+		name: 'Keeper',
+		link: '/keeper',
+		description: 'Create a CRUD app',
+		display: true
+	},{
 		name: 'Fake Twitter',
 		link: '/twitter-clone',
 		description: 'Create a CRUD app',
